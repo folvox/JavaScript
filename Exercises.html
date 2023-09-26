@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello world</h1>
+  <script>
+    // Підтвердження виклику prompt за допомогою confirm
+var confirmation = confirm("Викликати prompt?");
+
+// Перевірка результату confirm
+if (confirmation) {
+  // Викликаємо перший prompt для введення X
+  var X = parseFloat(prompt("Введіть число X:"));
+
+  // Викликаємо другий prompt для введення Y (діапазон 0-4)
+  var Y = parseInt(prompt("Введіть число Y (від 0 до 4):"));
+
+  // Перевірка, чи введені числа
+  if (!isNaN(X) && !isNaN(Y)) {
+    // Обчислення X в степені Y
+    var result;
+    switch (Y) {
+      case 0:
+        result = 1;
+        break;
+      case 1:
+        result = X;
+        break;
+      case 2:
+        result = X * X;
+        break;
+      case 3:
+        result = X * X * X;
+        break;
+      case 4:
+        result = X * X * X * X;
+        break;
+      default:
+        result = "Невірне значення Y. Введіть число від 0 до 4.";
+    }
+
+    // Виведення результату через console.log()
+    console.log("Результат: " + result);
+  } else {
+    console.log("Введені значення некоректні. Будь ласка, введіть числа.");
+  }
+} else {
+  console.log("Робота програми завершена.");
+}
+  </script>
+</body>
+</html>
